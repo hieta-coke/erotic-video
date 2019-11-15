@@ -1,0 +1,136 @@
+a {
+    transition: .3s;
+}
+#logo {
+    margin: .5rem 0;
+}
+#logo a {
+    display: block;
+    width: 250px;
+}
+#logo a img {
+    width: 100%;
+}
+.overlay_btn {
+    display: block;
+}
+.overlay_btn i {
+    font-size: 2rem;
+}
+#search_btn i {
+    color: #fff;
+}
+#close_btn {
+    position: absolute;
+    right: 15px;
+    padding: .5rem 0;
+    z-index: 101;
+}
+#close_btn i {
+    color: #000;
+}
+#footer_menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+#footer_menu li {
+    padding: 0 1rem;
+    border-right: solid 1px #fff;
+}
+#footer_menu li:last-child {
+    border-right: none;
+}
+#footer_menu li a {
+    color: #fff;
+}
+.mv_item {
+    margin: 0;
+    padding-bottom: 30px;
+}
+.mv_item .mv_img {
+    display: block;
+    height: 150px;
+}
+.mv_item .mv_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mv_item article {
+    padding: 1rem;
+    background-color: #f3f3f3;
+}
+.mv_item article h3 {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mv_item article li a {
+    display: inline-block;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 100;
+    transition: 0.5s;
+    transform: scale(0);
+}
+.overlay .content {
+    width: 100%;
+    text-align: center;
+}
+iframe {
+    width: 100%;
+    height: 600px;
+}
+.comment {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-left: 15px;
+    background-color: #efeced;
+    position: relative;
+}
+.comment:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #efeced;
+  }
+.copyright {
+    padding: 1rem 0;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+.eval_list {
+    list-style: none;
+    display: inline-flex;
+    padding-left: 0;
+}
+.eval_list li span {
+    padding: 0 1rem;
+}
+#comment {
+    background-color: #faf9fb;
+}
+#contact label {
+    margin-bottom: 0;
+    color: #fff;
+}
+.desc {
+    letter-spacing: .1rem;
+    line-height: 2rem;
+}
+.icon i {
+    padding-right: 1rem;
+}
