@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title }}</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {% load widget_tweaks %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-between">
+                <!-- <h1 id="logo"><a href="/"><img src="{% static 'img/logo.png' %}" alt=""></a></h1> -->
+                <h1 class="text-light"><a href="/" class="d-block text-light" style="text-decoration: none;">TestVideo</a></h1>
+                <div>
+                    <a id="search_btn" class="overlay_btn"><i class="fas fa-search open"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="container h-100">
+            <div class="row h-100 position-relative">
+                <a id="close_btn" class="overlay_btn"><i class="far fa-times-circle"></i></a>
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="content">
+                        <h2 class="icon"><i class="fas fa-search"></i>検索</h2>
+                        <p>キーワードで検索できます。</p>
+                        <form action="{% url 'video:search' %}" method="post" class="form-inline justify-content-center">
+                            {% csrf_token %}
+                            {{ search_form.squeeze|add_class:"form-control w-50" }}
+                            <span class="px-3"><input type="submit" value="検索" class="btn btn-primary"></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %}{% endblock %}
+<footer class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul id="footer_menu">
+                    <li><a href="/about">このサイトについて</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<p class="copyright">Copyright 2019 (c) RealVideo</p>
+</footer>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

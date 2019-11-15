@@ -1,0 +1,98 @@
+{% extends 'video/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+{% load static %}
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(90deg, rgba(40,139,243,1) 18%, rgba(84,201,238,1) 54%, rgba(135,236,194,1) 83%);">
+    <div class="container desc">
+        <h1 class="display-5 text-light">TestVideoに広告を掲載しませんか？</h1>
+        <p class="lead text-light">広告出稿のお申し込み、その他お問い合わせについては下記のお問い合わせフォームよりお願いします。<br>ご入力頂いた個人情報はお問い合わせ対応にのみ使用致します。</p>
+    </div>
+</div>
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-6"><img src="{% static 'img/ad.jpg' %}" class="mw-100" alt=""></div>
+            <div class="col-md-6">
+                <article class="desc pt-4 pt-md-0">
+                    <h3 class="text-primary">広告掲載について</h3>
+                    <p>
+                        当サイトでは広告を随時募集しております。掲載位置や料金等クライアント様のご希望に柔軟に対応させて頂きます。<br>
+                        ただしワンクリ等の違法サイトの広告はお断りさせて頂きますのでご了承ください。<br>
+                        掲載を希望される方はページ下部のお問い合わせフォームよりご連絡ください。
+                    </p>
+                </article>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <article>
+                    <div class="table-responsive">
+                    　　<table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>デバイス</th>
+                                <th>サイズ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PC</td>
+                                <td>
+                                    468×60<br>
+                                    234×60<br>
+                                    120×120<br>
+                                    120×60<br>
+                                    100×60<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>スマホ</td>
+                                <td>
+                                    320×50<br>
+                                    480×32
+                                </td>
+                            </tr>
+                        </tbody>
+                    　　</table>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="desc pt-4">
+                    <h3 class="text-primary">デバイス別の広告のサイズについて</h3>
+                    <strong>PCの場合</strong>
+                    <p>
+                        PCサイトは、どんなバナーサイズでも掲載可能です。<br>
+                        アクセストレードでは、左記5サイズがPCサイトでの掲載によく利用され、多くクリックされています。
+                    </p>
+                    <strong>スマホの場合</strong>
+                    <p>
+                        スマホサイトは、画面の縦・横にあわせた左記の2サイズが基本となります。最も使用されているのは、320×50です。
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5" style="background: linear-gradient(90deg, rgba(83,146,213,1) 15%, rgba(82,100,157,1) 60%, rgba(37,75,82,1) 83%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-light pb-5 icon"><i class="far fa-envelope"></i>お問い合わせ</h2>
+                <form action="{% url 'video:contact' %}" method="post" id="contact" class="form-block justify-content-center">
+                    {% csrf_token %}
+                    <label>{{ contact_form.name.label }}</label>
+                    {{ contact_form.name|add_class:"form-control w-100 my-3" }}
+                    <label>{{ contact_form.email.label }}</label>
+                    {{ contact_form.email|add_class:"form-control w-100 my-3" }}
+                    <label>{{ contact_form.subject.label }}</label>
+                    {{ contact_form.subject|add_class:"form-control w-100 my-3" }}
+                    <label>{{ contact_form.content.label }}</label>
+                    {{ contact_form.content|add_class:"form-control w-100 my-3" }}
+                    <span class="px-3 my-5 d-block text-center "><input type="submit" value="送信" class="btn btn-primary border-light"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

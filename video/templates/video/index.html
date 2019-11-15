@@ -1,0 +1,50 @@
+{% extends 'video/base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row my-5">
+    <div class="col-12"><h2 class="mb-5">{{ search_title }}</h2></div>
+    {% for movie in movies %}
+    <div class="mv_item col-12 col-sm-6 col-md-3">
+        <a href="{% url 'video:movie' movie.pk %}" class="mv_img">
+            <img src="{{ movie.thumb.url }}">
+        </a>
+        <article>
+            <h3>{{ movie.title }}</h3>
+            <div>
+                <ul class="eval_list">
+                    <li><a><i class="far fa-hand-point-up"></i></a></li>
+                    <li><span>{{ movie.good }}</span></li>
+                    <li><a><i class="far fa-hand-point-down"></i></a></li>
+                    <li><span>{{ movie.bad }}</span></li>
+                </ul>
+            </div>
+            <a href="{% url 'video:category' movie.category.title %}" class="badge badge-danger">{{ movie.category }}</a>
+            {% for tag in movie.tag %}
+            <a href="{% url 'video:tag' tag %}" class="badge badge-primary">{{ tag }}</a>
+            {% endfor %}
+        </article>
+    </div>
+    {% endfor %}
+    <div class="col-12 py-5">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if movies.has_previous %}
+                <li class="page-item"><a class="page-link" href="?p={{ movies.previous_page_number }}">Prev</a></li>
+                {% endif %}
+                {% for page in movies.paginator.all_page %}
+                    {% if movies.number == page|add:"1" %}
+                    <li class="page-item active"><a class="page-link" href="?p={{ page|add:'1' }}">{{ page|add:"1" }}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?p={{ page|add:'1' }}">{{ page|add:"1" }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if movies.has_next %}
+                <li class="page-item"><a class="page-link" href="?p={{ movies.next_page_number }}">Next</a></li>
+                {% endif %}
+            </ul>
+          </nav>
+    </div>
+</div>
+</div>
+{% endblock %}

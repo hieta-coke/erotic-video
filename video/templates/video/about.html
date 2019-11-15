@@ -1,0 +1,46 @@
+{% extends 'video/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(90deg, rgba(40,139,243,1) 18%, rgba(84,201,238,1) 54%, rgba(135,236,194,1) 83%);">
+    <div class="container desc">
+        <h1 class="display-5 text-light">TestVideoについて</h1>
+        <p class="lead text-light">TestVideoは無料で閲覧出来るアダルト動画のまとめサイトです。<br>アダルトコンテンツを含むため18歳未満の方は閲覧禁止です。</p>
+    </div>
+</div>
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <article class="desc">
+                    <h3 class="text-primary icon"><i class="fas fa-user-lock"></i>サイトポリシー</h3>
+                    <p>
+                        当サイトはアダルト動画サイトをクロールしインデックスしているのであり著作権侵害、及びその助長を目的としてはおりません。<br>また動画共有サイトへのアップロード行為やそれを推奨、援助する行為は一切行っておりません。動画のご利用については各個人の責任でお願い致します。
+                    </p>
+                </article>
+                <article class="desc">
+                    <h3 class="text-primary icon"><i class="fas fa-video"></i>掲載されている動画について</h3>
+                    <p>
+                        当サイトは掲載している動画が著作権者の同意の元アップロードされているかを確認しておりません。掲載されている動画について問題などがございましたら各動画共有サイトへお問い合わせください。
+                    </p>
+                </article>
+                <article class="desc">
+                    <h3 class="text-primary icon"><i class="far fa-copyright"></i>著作権について</h3>
+                    <p>
+                        当サイトに掲載されている動画や画像の著作権は各権利所有者に帰属しております。問題がある場合は対象となるURLを明記の上、権利所有者ご本人様がご連絡下さい。確認後、早急に対応致します。
+                    </p>
+                </article>
+                <article class="desc">
+                    <h3 class="text-primary icon"><i class="far fa-comment"></i>免責事項</h3>
+                    <p>
+                        当サイト及び外部リンク先のサイトを利用したことにより発生したいかなる損失・損害についても当サイトは一切の責任と義務を負いません。ご利用は自己責任でお願い致します。
+                    </p>
+                </article>
+                <div class="my-5 text-center">
+                    <a class="btn btn-primary btn-lg" href="/contact" role="button">お問い合わせへ</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
