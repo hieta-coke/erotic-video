@@ -1,1 +1,1 @@
-web: gunicorn maziiki-stream.wsgi --log-file - 
+web: gunicorn RealVideo.wsgi --log-file - 
