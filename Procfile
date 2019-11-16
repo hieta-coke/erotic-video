@@ -1,1 +1,1 @@
-web: guicorn maziiki-stream.wsgi --log-file - 
+web: gunicorn maziiki-stream.wsgi --log-file - 
