@@ -1,7 +1,6 @@
-*.pyc
-*~
-/.vscode
+<your_venv>
 __pycache__
-myvenv
+staticfiles
+local_settings.py
 db.sqlite3
-.DS_Store
+*.py[co]
