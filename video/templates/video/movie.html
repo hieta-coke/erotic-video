@@ -45,7 +45,9 @@
     </div>
     {% endfor %}
     <div class="col-12 my-5">
-        <h2 class="py-3 icon"><i class="far fa-comments text-info"></i>コメント一覧</h2>
+        {% if comments %}
+            <h2 class="py-3 icon"><i class="far fa-comments text-info"></i>コメント一覧</h2>
+        {% endif %}
         {% for comment in comments %}
             <p class="comment"><span class="badge badge-info">{{ comment.name }}</span><br>{{ comment.comment }}</p>
         {% endfor %}

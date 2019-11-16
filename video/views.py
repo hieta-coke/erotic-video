@@ -124,7 +124,17 @@ def search_form(request):
 
 def page_contact(request):
     if request.method == 'POST':
-        pass
+        form = ContactForm(request.POST)
+        content = {
+            "status": "正常に送信されませんでした",
+            'page_title': 'RealVideo | お問い合わせ',
+            'search_form': SearchForm(),
+            'contact_form': ContactForm(),
+        }
+        if form.is_valid():
+            form.send_mail()
+            content["status"] = "正常に送信されました"
+        return render(request, 'video/contact.html', content)
     else:
         content = {
             'page_title': 'RealVideo | お問い合わせ',
