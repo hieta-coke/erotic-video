@@ -64,9 +64,10 @@ a {
 }
 .mv_item article h3 {
     font-size: 1rem;
+    display: -webkit-box;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .mv_item article li a {
     display: inline-block;

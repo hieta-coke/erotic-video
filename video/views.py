@@ -16,7 +16,7 @@ def index(request):
     for movie in movies:
         movie.tag = movie.tag.split(',')
     content = {
-        'page_title': 'RealVideo | リアルビデオ',
+        'page_title': 'しこるおまとめ | ディルドオナニー、潮吹きなどの厳選した動画をまとめるエロサイト。',
         'search_form': SearchForm(),
         'movies': movies,
     }
@@ -45,7 +45,7 @@ def movie(request, pk):
         for rm in movies:
             rm.tag = rm.tag.split(',')
         content = {
-            'page_title': 'RealVideo | ' + movie.title,
+            'page_title': 'しこるおまとめ | ' + movie.title,
             'search_form': SearchForm(),
             'comment_form': CommentForm(),
             'movie': movie,
@@ -83,7 +83,7 @@ def search_category(request, c):
     for movie in movies:
         movie.tag = movie.tag.split(',')
     content = {
-        'page_title': 'RealVideo | カテゴリ >> ' + c,
+        'page_title': 'しこるおまとめ | カテゴリ >> ' + c,
         'search_form': SearchForm(),
         'search_title': 'カテゴリ >> ' + c,
         'movies': movies,
@@ -100,7 +100,7 @@ def search_tag(request, t):
     for movie in movies:
         movie.tag = movie.tag.split(',')
     content = {
-        'page_title': 'RealVideo | タグ >> ' + t,
+        'page_title': 'しこるおまとめ | タグ >> ' + t,
         'search_form': SearchForm(),
         'search_title': 'タグ >> ' + t,
         'movies': movies,
@@ -117,7 +117,7 @@ def search_form(request):
             for movie in movies:
                 movie.tag = movie.tag.split(',')
             content = {
-                'page_title': 'RealVideo | リアルビデオ',
+                'page_title': 'しこるおまとめ | ディルドオナニー、潮吹きなどの厳選した動画をまとめるエロサイト。',
                 'search_form': SearchForm(),
                 'search_title': 'タイトル >> ' + txt,
                 'movies': movies,
@@ -130,7 +130,7 @@ def page_contact(request):
         form = ContactForm(request.POST)
         content = {
             "status": "正常に送信されませんでした",
-            'page_title': 'RealVideo | お問い合わせ',
+            'page_title': 'しこるおまとめ | お問い合わせ',
             'search_form': SearchForm(),
             'contact_form': ContactForm(),
         }
@@ -140,7 +140,7 @@ def page_contact(request):
         return render(request, 'video/contact.html', content)
     else:
         content = {
-            'page_title': 'RealVideo | お問い合わせ',
+            'page_title': 'しこるおまとめ | お問い合わせ',
             'search_form': SearchForm(),
             'contact_form': ContactForm(),
         }
@@ -148,7 +148,7 @@ def page_contact(request):
 
 def page_about(request):
     content = {
-        'page_title': 'RealVideo | このサイトについて',
+        'page_title': 'しこるおまとめ | このサイトについて',
         'search_form': SearchForm(),
     }
     return render(request, 'video/about.html', content)
@@ -156,7 +156,7 @@ def page_about(request):
 # 404
 def notfound(request, exception):
     content = {
-        'page_title': 'RealVideo | 404 not found',
+        'page_title': 'しこるおまとめ | 404 not found',
         'search_form': SearchForm(),
     }
     return render(request,'404.html', content)
