@@ -15,8 +15,5 @@ urlpatterns = [
     path('search/', views.search_form, name='search'),
     path('contact/', views.page_contact, name='contact'),
     path('about/', views.page_about, name='about'),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

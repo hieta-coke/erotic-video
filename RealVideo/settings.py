@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django_cleanup',
     'widget_tweaks',
     'video',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -128,14 +130,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'hieta.coke1192@gmail.com'
 EMAIL_HOST_PASSWORD = 'pfrkahqmiaqxluzl'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 try:
     from .local_settings import *
@@ -145,3 +146,9 @@ except ImportError:
 if not DEBUG:
     import django_heroku
     django_heroku.settings(locals())
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dhbyy6aei',
+    'API_KEY': '539198448675289',
+    'API_SECRET': 'ZxMPDGcdysRAsz15_9bSUhCuCvY'
+}
