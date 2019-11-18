@@ -34,7 +34,7 @@
             var csrf_token = getCookie("csrftoken");
             var eval_ajax = () => {
                 $.ajax({
-                    url: location.protocol + "//" + location.hostname + ":8000/movie/" + pk + "/eval",
+                    url: location.protocol + "//" + location.hostname + "/movie/" + pk + "/eval",
                     type:'POST',
                     data:{ "eval": btn, },
                     contentType: "application/json",
