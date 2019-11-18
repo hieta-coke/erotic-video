@@ -23,7 +23,7 @@
         <h2 class="py-3 icon"><i class="fas fa-fire text-danger"></i>あなたへのおすすめ</h2>
     </div>
     {% for movie in relation %}
-    <div class="mv_item col-12 col-sm-6 col-md-3">
+    <div class="mv_item col-6 col-md-3">
         <a href="{% url 'video:movie' movie.pk %}" class="mv_img">
             <img src="{{ movie.thumb.url }}">
         </a>

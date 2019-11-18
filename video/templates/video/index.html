@@ -5,7 +5,7 @@
 <div class="row my-5">
     <div class="col-12"><h2 class="mb-5">{{ search_title }}</h2></div>
     {% for movie in movies %}
-    <div class="mv_item col-12 col-sm-6 col-md-3">
+    <div class="mv_item col-6 col-md-3">
         <a href="{% url 'video:movie' movie.pk %}" class="mv_img">
             <img src="{{ movie.thumb.url }}">
         </a>

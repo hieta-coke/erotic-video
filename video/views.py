@@ -37,8 +37,11 @@ def movie(request, pk):
         movie.view += 1
         movie.save()
         comments = Comment.objects.filter(movie=movie).order_by('-created_at')
-        origin_tags = "(" + movie.tag + ")".replace(",", "|")
-        movies = Movie.objects.filter(tag__regex=origin_tags)
+        queries = [Q(tag__icontains=tag) for tag in movie.tag.split(",")]
+        query = queries.pop()
+        for item in queries:
+            query |= item
+        movies = Movie.objects.filter(query)
         for rm in movies:
             rm.tag = rm.tag.split(',')
         content = {
