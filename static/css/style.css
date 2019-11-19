@@ -135,3 +135,19 @@ iframe {
 .icon i {
     padding-right: 1rem;
 }
+@media (max-width: 767.98px) {
+    #footer_menu {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    #footer_menu li {
+        width: 50%;
+    }
+    #footer_menu li:last-child {
+        border-right: solid 1px #fff;
+    }
+    #footer_menu li a {
+        display: inline-block;
+        padding: .3rem 0;
+    }
+}
