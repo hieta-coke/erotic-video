@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 
 class LatestPostFeed(Feed):
     title = "しこるおまとめ"
-    link = reverse_lazy('video:index')
+    link = reverse_lazy('video:feed')
     description = "しこるおまとめから、記事の最新情報をお届けします。"
 
     def items(self):
