@@ -16,6 +16,6 @@ urlpatterns = [
     path('search/', views.search_form, name='search'),
     path('contact/', views.page_contact, name='contact'),
     path('about/', views.page_about, name='about'),
-    path('latest/feed/', LatestPostFeed(), name='feed'),
+    path('feed/', LatestPostFeed(), name='feed'),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
