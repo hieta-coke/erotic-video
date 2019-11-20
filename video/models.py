@@ -8,7 +8,7 @@ class Category(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=150)
-    thumb = models.ImageField()
+    thumb = models.ImageField(null=True)
     iframe = models.TextField(null=True, blank=False)
     good = models.IntegerField(default=0)
     bad = models.IntegerField(default=0)
