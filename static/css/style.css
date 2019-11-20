@@ -1,6 +1,12 @@
 a {
     transition: .3s;
 }
+#site_title {
+    color: #fff;
+    margin: .3rem 0;
+    line-height: initial;
+    font-size: 2rem;
+}
 #logo {
     margin: .5rem 0;
 }
