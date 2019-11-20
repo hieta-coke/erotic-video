@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
     'bootstrap4',
     'django_cleanup',
     'widget_tweaks',
     'video',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
