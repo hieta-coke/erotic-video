@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django_cleanup',
     'widget_tweaks',
     'video',
-    'cloudinary_storage',
     'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
